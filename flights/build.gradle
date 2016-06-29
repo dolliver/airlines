@@ -4,37 +4,47 @@ buildscript {
 	}
 	repositories {
 		mavenCentral()
+		maven { url "http://repo1.maven.org/maven2/" }
+		maven { url "https://plugins.gradle.org/m2/" }
+		maven { url "http://repo.spring.io/libs-release" }
 	}
 	dependencies {
 		classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}") 
 	}
 }
 
-apply plugin: 'java'
+apply plugin: 'groovy'
 apply plugin: 'eclipse'
 apply plugin: 'spring-boot' 
+apply plugin: 'idea'
 
 jar {
 	baseName = 'airlines'
 	version = '0.0.1-SNAPSHOT'
 }
-sourceCompatibility = 1.8
-targetCompatibility = 1.8
+sourceCompatibility = 1.7
+targetCompatibility = 1.7
 
 repositories {
 	mavenCentral()
+	maven { url "http://repo1.maven.org/maven2/" }
+	maven { url "https://plugins.gradle.org/m2/" }
+	maven { url "http://repo.spring.io/libs-release" }
 }
-
 
 dependencies {
 	compile('org.springframework.boot:spring-boot-starter-web')
-	testCompile('org.springframework.boot:spring-boot-starter-test') 
-}
-
-
-eclipse {
-	classpath {
-		 containers.remove('org.eclipse.jdt.launching.JRE_CONTAINER')
-		 containers 'org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8'
+	//compile('org.apache.camel:camel-spring-ws:2.17.1')
+	compile('org.apache.camel:camel-spring-boot:2.17.1')
+	compile('org.apache.camel:camel-cxf:2.17.1')
+	compile('org.apache.camel:camel-restlet:2.17.1') {
+	exclude module: 'spring' //by artifact name
 	}
+	compile('org.restlet.jee:org.restlet.ext.spring:2.3.1')
+	
+	
+	
+	compile 'org.codehaus.groovy:groovy-all:2.3.7:indy'
+	
+	testCompile('org.springframework.boot:spring-boot-starter-test') 
 }
