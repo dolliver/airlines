@@ -14,4 +14,10 @@ public final class FlightAvailabilityResponse {
     this.availability = availability;
   }
 
+  public List<AvailabilityResponse> getAvailability() {
+    return availability;
+  }
+
+
+
 }

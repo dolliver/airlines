@@ -16,4 +16,18 @@ public class PriceResponse {
     this.bookingFee = bookingFee;
     this.tax = tax;
   }
+
+  public MoneyAmountResponse getTicket() {
+    return ticket;
+  }
+
+  public MoneyAmountResponse getBookingFee() {
+    return bookingFee;
+  }
+
+  public MoneyAmountResponse getTax() {
+    return tax;
+  }
+
+
 }

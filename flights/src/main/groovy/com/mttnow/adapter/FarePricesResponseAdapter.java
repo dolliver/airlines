@@ -1,4 +1,4 @@
-package com.mttnow.adapters;
+package com.mttnow.adapter;
 
 import com.mttnow.client.model.Availability.Flight.Fares.Fare;
 import com.mttnow.controller.model.response.FarePricesResponse;
@@ -25,6 +25,10 @@ public class FarePricesResponseAdapter {
     PriceResponse business = priceResponseAdapter.toEntity(getFareFromList(fares, FareClassEnum.BUSINESS));
     PriceResponse economy = priceResponseAdapter.toEntity(getFareFromList(fares, FareClassEnum.ECONOMY));
 
+    if (first == null && business == null && economy == null) {
+      return null;
+    }
+
     FarePricesResponse response = new FarePricesResponse(first, business, economy);
     return response;
   }
@@ -32,7 +36,7 @@ public class FarePricesResponseAdapter {
   private Fare getFareFromList(List<Fare> list, FareClassEnum fareClass) {
     if (list != null && !list.isEmpty()) {
       for (Fare fare : list) {
-        if (fare.getClazz().equals(fareClass.code())) {
+        if (fare.getClazz() != null && fare.getClazz().equals(fareClass.code())) {
           return fare;
         }
       }

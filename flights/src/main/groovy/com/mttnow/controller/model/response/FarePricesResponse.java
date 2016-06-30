@@ -16,4 +16,18 @@ public class FarePricesResponse {
     this.business = business;
     this.economy = economy;
   }
+
+  public PriceResponse getFirst() {
+    return first;
+  }
+
+  public PriceResponse getBusiness() {
+    return business;
+  }
+
+  public PriceResponse getEconomy() {
+    return economy;
+  }
+
+
 }

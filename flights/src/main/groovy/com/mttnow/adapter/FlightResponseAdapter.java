@@ -1,4 +1,4 @@
-package com.mttnow.adapters;
+package com.mttnow.adapter;
 
 import com.mttnow.client.model.Availability.Flight;
 import com.mttnow.controller.model.response.FarePricesResponse;
@@ -27,7 +27,11 @@ public class FlightResponseAdapter {
       return null;
     }
 
-    FarePricesResponse farePrices = farePricesResponseAdapter.toEntity(flight.getFares().getFare());
+    FarePricesResponse farePrices = null;
+    if (flight.getFares() != null) {
+      farePrices = farePricesResponseAdapter.toEntity(flight.getFares().getFare());
+    }
+
     TimeResponse arrivesOn = timeResponseAdapter.toEntity(flight.getArrivalDate());
     TimeResponse departsOn = timeResponseAdapter.toEntity(flight.getDepartureDate());
     String flightTime = calculateFlightDuration(flight.getDepartureDate(), flight.getArrivalDate());
@@ -39,6 +43,10 @@ public class FlightResponseAdapter {
   }
 
   private String calculateFlightDuration(XMLGregorianCalendar departureDate, XMLGregorianCalendar arrivalDate) {
+
+    if (departureDate == null || arrivalDate == null || departureDate.compare(arrivalDate) > 0) {
+      return null;
+    }
 
     DateTime start = new DateTime(departureDate.toGregorianCalendar().getTime());
     DateTime end = new DateTime(arrivalDate.toGregorianCalendar().getTime());

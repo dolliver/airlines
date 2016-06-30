@@ -12,4 +12,10 @@ public class AvailabilityResponse {
     this.flight = flight;
   }
 
+  public FlightResponse getFlight() {
+    return flight;
+  }
+
+
+
 }

@@ -1,6 +1,6 @@
 package com.mttnow.client;
 
-import com.mttnow.adapters.FlightAvailabilityResponseAdapter;
+import com.mttnow.adapter.FlightAvailabilityResponseAdapter;
 import com.mttnow.client.model.Availability;
 import com.mttnow.controller.model.response.FlightAvailabilityResponse;
 
@@ -18,7 +18,7 @@ public class AirlineClientResponseReceiver {
   @Autowired
   FlightAvailabilityResponseAdapter adapter;
 
-  public void receive(Exchange exchange) throws Exception {
+  public void receive(Exchange exchange) {
 
     // Parse client XML response to Java Pojo
     String clientXmlResponse = (String) exchange.getIn().getBody();

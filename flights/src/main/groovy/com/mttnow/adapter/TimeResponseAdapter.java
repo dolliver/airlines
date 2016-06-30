@@ -1,4 +1,4 @@
-package com.mttnow.adapters;
+package com.mttnow.adapter;
 
 import com.mttnow.controller.model.response.TimeResponse;
 import com.mttnow.util.MTTDateTimeUtils;

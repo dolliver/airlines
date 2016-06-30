@@ -1,4 +1,4 @@
-package com.mttnow.adapters;
+package com.mttnow.adapter;
 
 import com.mttnow.client.model.Availability;
 import com.mttnow.client.model.Availability.Flight;
@@ -27,9 +27,10 @@ public class FlightAvailabilityResponseAdapter {
   }
 
   private List<AvailabilityResponse> generateAvailabilitiesList(final Availability availability) {
-    List<AvailabilityResponse> availabilities = new ArrayList<AvailabilityResponse>();
+    List<AvailabilityResponse> availabilities = null;
 
     if (availability.getFlight() != null && !availability.getFlight().isEmpty()) {
+      availabilities = new ArrayList<AvailabilityResponse>();
       for (Flight flight : availability.getFlight()) {
         availabilities.add(availabilityResponseAdapter.toEntity(flight));
       }

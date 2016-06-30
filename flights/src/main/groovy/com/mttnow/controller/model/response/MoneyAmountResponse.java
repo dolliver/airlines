@@ -13,4 +13,14 @@ public class MoneyAmountResponse {
     this.currency = currency;
     this.amount = amount;
   }
+
+  public String getCurrency() {
+    return currency;
+  }
+
+  public double getAmount() {
+    return amount;
+  }
+
+
 }

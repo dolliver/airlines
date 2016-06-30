@@ -1,4 +1,4 @@
-package com.mttnow.adapters;
+package com.mttnow.adapter;
 
 import com.mttnow.client.model.Availability.Flight.Fares.Fare;
 import com.mttnow.controller.model.response.MoneyAmountResponse;

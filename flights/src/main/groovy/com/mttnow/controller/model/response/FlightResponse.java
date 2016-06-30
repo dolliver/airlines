@@ -29,4 +29,36 @@ public class FlightResponse {
     this.farePrices = farePrices;
   }
 
+  public String getOperator() {
+    return operator;
+  }
+
+  public String getFlightNumber() {
+    return flightNumber;
+  }
+
+  public String getDepartsFrom() {
+    return departsFrom;
+  }
+
+  public String getArrivesAt() {
+    return arrivesAt;
+  }
+
+  public TimeResponse getDepartsOn() {
+    return departsOn;
+  }
+
+  public TimeResponse getArrivesOn() {
+    return arrivesOn;
+  }
+
+  public String getFlightTime() {
+    return flightTime;
+  }
+
+  public FarePricesResponse getFarePrices() {
+    return farePrices;
+  }
+
 }
