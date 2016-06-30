@@ -4,11 +4,11 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class AvailabilityResponse {
-    public final FlightResponse flight;
+  public final FlightResponse flight;
 
-    @JsonCreator
-    public AvailabilityResponse(@JsonProperty("flight") FlightResponse flight){
-        this.flight = flight;
-    }
+  @JsonCreator
+  public AvailabilityResponse(@JsonProperty("flight") FlightResponse flight) {
+    this.flight = flight;
+  }
 
 }
