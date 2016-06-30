@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class FarePricesResponse {
+
   public final PriceResponse first;
   public final PriceResponse business;
   public final PriceResponse economy;

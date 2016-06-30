@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class FlightResponse {
+
   public final String operator;
   public final String flightNumber;
   public final String departsFrom;

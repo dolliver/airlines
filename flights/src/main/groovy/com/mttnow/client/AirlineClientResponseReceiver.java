@@ -1,7 +1,6 @@
-package com.mttnow;
+package com.mttnow.client;
 
 import com.mttnow.adapters.FlightAvailabilityResponseAdapter;
-import com.mttnow.client.XMLProcessor;
 import com.mttnow.client.model.Availability;
 import com.mttnow.controller.model.response.FlightAvailabilityResponse;
 
@@ -10,7 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 @Component
-public class AirlineResponseProcessor {
+public class AirlineClientResponseReceiver {
 
   @Autowired
   FlightAvailabilityResponseAdapter adapter;

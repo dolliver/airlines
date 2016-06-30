@@ -6,6 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
 public final class FlightAvailabilityResponse {
+
   public final List<AvailabilityResponse> availability;
 
   @JsonCreator

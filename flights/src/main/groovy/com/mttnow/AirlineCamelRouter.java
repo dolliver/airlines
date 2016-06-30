@@ -1,6 +1,7 @@
 package com.mttnow;
 
 import com.google.gson.Gson;
+import com.mttnow.client.AirlineClientResponseReceiver;
 
 import org.apache.camel.Exchange;
 import org.apache.camel.Processor;
@@ -29,7 +30,7 @@ public class AirlineCamelRouter extends RouteBuilder {
   private String airlineClientEndpoint;
 
   @Autowired
-  AirlineResponseProcessor airlineResponseProcessor;
+  AirlineClientResponseReceiver airlineResponseProcessor;
 
   @Override
   public void configure() throws Exception {

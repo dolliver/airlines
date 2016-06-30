@@ -2,11 +2,7 @@ package com.mttnow.enums;
 
 public enum FareClassEnum {
 
-  FIRST("FIF"),
-
-  BUSINESS("CIF"),
-
-  ECONOMY("YIF");
+  FIRST("FIF"), BUSINESS("CIF"), ECONOMY("YIF");
 
   private String code;
 
