@@ -40,9 +40,18 @@ dependencies {
 	compile('org.apache.camel:camel-restlet:2.17.1') {
 	exclude module: 'spring' //by artifact name
 	}
+	compile('com.google.code.gson:gson:2.7') 
+	
+	
+	//compile('org.apache.camel:camel-core:2.17.1')
+	compile('org.apache.camel:camel-xmljson:2.17.1')
+	compile('org.apache.camel:camel-jaxb:2.17.1')
 	compile('org.restlet.jee:org.restlet.ext.spring:2.3.1')
+	compile('com.io7m.xom:xom:1.2.10')
+	compile('joda-time:joda-time:2.9.4')
 	
 	
+	//compile files("libs/airline-client-1.0.0.jar")
 	
 	compile 'org.codehaus.groovy:groovy-all:2.3.7:indy'
 	
