@@ -34,6 +34,7 @@ public class FlightAvailabilityResponseAdapter {
         availabilities.add(availabilityResponseAdapter.toEntity(flight));
       }
     }
+
     return availabilities;
   }
 }

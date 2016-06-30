@@ -17,7 +17,6 @@ public class FarePricesResponseAdapter {
   PriceResponseAdapter priceResponseAdapter;
 
   public FarePricesResponse toEntity(List<Fare> fares) {
-
     if (fares == null || fares.isEmpty()) {
       return null;
     }

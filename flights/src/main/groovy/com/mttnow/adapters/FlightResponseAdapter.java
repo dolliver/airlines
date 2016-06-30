@@ -4,7 +4,7 @@ import com.mttnow.client.model.Availability.Flight;
 import com.mttnow.controller.model.response.FarePricesResponse;
 import com.mttnow.controller.model.response.FlightResponse;
 import com.mttnow.controller.model.response.TimeResponse;
-import com.mttnow.util.MTTDateUtils;
+import com.mttnow.util.MTTDateTimeUtils;
 
 import org.joda.time.DateTime;
 import org.joda.time.Duration;
@@ -23,7 +23,6 @@ public class FlightResponseAdapter {
   TimeResponseAdapter timeResponseAdapter;
 
   public FlightResponse toEntity(final Flight flight) {
-
     if (flight == null) {
       return null;
     }
@@ -44,7 +43,7 @@ public class FlightResponseAdapter {
     DateTime start = new DateTime(departureDate.toGregorianCalendar().getTime());
     DateTime end = new DateTime(arrivalDate.toGregorianCalendar().getTime());
     Duration duration = new Duration(start, end);
-    return MTTDateUtils.getStringFromDuration(duration);
+    return MTTDateTimeUtils.getStringFromDuration(duration);
 
   }
 

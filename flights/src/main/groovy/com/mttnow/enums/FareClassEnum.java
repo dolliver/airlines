@@ -13,14 +13,4 @@ public enum FareClassEnum {
   public String code() {
     return code;
   }
-
-  public static FareClassEnum findByCode(final String code) {
-    for (final FareClassEnum en : values()) {
-      if (en.code() == code) {
-        return en;
-      }
-    }
-    return null;
-  }
-
 }

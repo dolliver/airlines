@@ -15,7 +15,6 @@ public class AvailabilityResponseAdapter {
 
   public AvailabilityResponse toEntity(final Flight flight) {
     if (flight == null) {
-
       return null;
     }
 

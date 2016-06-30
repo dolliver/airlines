@@ -8,11 +8,9 @@ import org.springframework.stereotype.Component;
 public class MoneyAmountAdapter {
 
   public MoneyAmountResponse toEntity(final String amount) {
-
     if (amount == null) {
       return null;
     }
-
 
     String[] moneyParts = amount.split(" ");
     MoneyAmountResponse response = new MoneyAmountResponse(moneyParts[0], Double.valueOf(moneyParts[1]));

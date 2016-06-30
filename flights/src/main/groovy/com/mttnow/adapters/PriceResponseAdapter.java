@@ -15,7 +15,6 @@ public class PriceResponseAdapter {
 
   public PriceResponse toEntity(final Fare fare) {
     if (fare == null) {
-
       return null;
     }
 

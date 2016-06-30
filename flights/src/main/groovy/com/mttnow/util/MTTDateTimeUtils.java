@@ -9,7 +9,7 @@ import java.text.SimpleDateFormat;
 import javax.xml.datatype.XMLGregorianCalendar;
 
 
-public class MTTDateUtils {
+public class MTTDateTimeUtils {
 
   public static final String FORMAT_DATE = "dd-MM-yyyy";
   public static final String FORMAT_TIME = "hh:mma";
