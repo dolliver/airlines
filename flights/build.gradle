@@ -24,6 +24,7 @@ apply plugin: 'groovy'
 apply plugin: 'eclipse'
 apply plugin: 'spring-boot' 
 apply plugin: 'idea'
+apply plugin: 'jacoco'
 
 jar {
 	baseName = 'flights-availability'
@@ -50,4 +51,13 @@ dependencies {
 	compile "org.apache.camel:camel-restlet:$camelVersion"
 	
 	testCompile('org.springframework.boot:spring-boot-starter-test') 
+}
+
+jacocoTestReport {
+    group = "Reporting"
+    reports {
+        xml.enabled true
+        csv.enabled false
+        html.destination "${buildDir}/reports/coverage"
+    }
 }
