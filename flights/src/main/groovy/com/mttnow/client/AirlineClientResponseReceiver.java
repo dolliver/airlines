@@ -8,6 +8,10 @@ import org.apache.camel.Exchange;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import java.io.StringReader;
+
+import javax.xml.bind.JAXB;
+
 @Component
 public class AirlineClientResponseReceiver {
 
@@ -16,7 +20,11 @@ public class AirlineClientResponseReceiver {
 
   public void receive(Exchange exchange) throws Exception {
 
-    Availability avail = XMLProcessor.process((String) exchange.getIn().getBody());
+    // Parse client XML response to Java Pojo
+    String clientXmlResponse = (String) exchange.getIn().getBody();
+    Availability avail = JAXB.unmarshal(new StringReader(clientXmlResponse), Availability.class);
+
+    // Adapt Java XML Pojo to Controller Response Format
     FlightAvailabilityResponse response = adapter.toEntity(avail);
     exchange.getOut().setBody(response);
     exchange.getOut().setHeaders(exchange.getIn().getHeaders());

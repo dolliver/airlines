@@ -37,9 +37,13 @@ public class AirlineCamelRouter extends RouteBuilder {
 
     restConfiguration().component(REST_COMPONENT_RESTLET);
 
+    // REST endpoint route exposed by application that returns JSON of flights
+    // availabilities
     rest(FLIGHT_AVAILABILITY_ENDPOINT).get("/{origin}/{destination}/{departureDate}/{returnDate}/{passengers}")
         .produces(MediaType.APPLICATION_JSON_VALUE).to(AIRLINE_CLIENT_ROUTE);
 
+    // Route that consumes airline REST webservice that returns their flights in
+    // XML
     from(AIRLINE_CLIENT_ROUTE)
         .to("restlet://" + airlineClientEndpoint + "/{origin}/{destination}/{departureDate}/{returnDate}/{passengers}")
         .convertBodyTo(String.class).bean(airlineResponseProcessor).process(new Processor() {

@@ -16,12 +16,10 @@ public class MTTDateTimeUtils {
 
   public static String getDateFromXmlCalendar(final XMLGregorianCalendar date) {
     return parseXmlCalendarToString(date, FORMAT_DATE);
-
   }
 
   public static String getTimeFromXmlCalendar(final XMLGregorianCalendar date) {
     return parseXmlCalendarToString(date, FORMAT_TIME);
-
   }
 
   public static String parseXmlCalendarToString(final XMLGregorianCalendar date, final String format) {
@@ -40,6 +38,5 @@ public class MTTDateTimeUtils {
     String result = hm.print(duration.toPeriod());
     return result;
   }
-
 
 }
