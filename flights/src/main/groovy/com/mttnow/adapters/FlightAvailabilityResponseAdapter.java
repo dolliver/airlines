@@ -1,7 +1,7 @@
 package com.mttnow.adapters;
 
-import com.mttnow.Availability;
-import com.mttnow.Availability.Flight;
+import com.mttnow.client.model.Availability;
+import com.mttnow.client.model.Availability.Flight;
 import com.mttnow.controller.model.response.AvailabilityResponse;
 import com.mttnow.controller.model.response.FlightAvailabilityResponse;
 

@@ -1,7 +1,7 @@
 package com.mttnow.adapters;
 
-import com.mttnow.MTTDateUtils;
 import com.mttnow.controller.model.response.TimeResponse;
+import com.mttnow.util.MTTDateUtils;
 
 import org.springframework.stereotype.Component;
 

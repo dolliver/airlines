@@ -1,10 +1,10 @@
 package com.mttnow.adapters;
 
-import com.mttnow.Availability.Flight;
-import com.mttnow.MTTDateUtils;
+import com.mttnow.client.model.Availability.Flight;
 import com.mttnow.controller.model.response.FarePricesResponse;
 import com.mttnow.controller.model.response.FlightResponse;
 import com.mttnow.controller.model.response.TimeResponse;
+import com.mttnow.util.MTTDateUtils;
 
 import org.joda.time.DateTime;
 import org.joda.time.Duration;

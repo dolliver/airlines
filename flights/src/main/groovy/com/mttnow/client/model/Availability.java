@@ -6,7 +6,7 @@
 //
 
 
-package com.mttnow;
+package com.mttnow.client.model;
 
 import java.util.ArrayList;
 import java.util.List;

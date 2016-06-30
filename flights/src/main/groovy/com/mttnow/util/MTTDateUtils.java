@@ -1,4 +1,4 @@
-package com.mttnow;
+package com.mttnow.util;
 
 import org.joda.time.Duration;
 import org.joda.time.format.PeriodFormatter;

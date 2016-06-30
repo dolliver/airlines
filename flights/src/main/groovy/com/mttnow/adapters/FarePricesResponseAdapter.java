@@ -1,6 +1,6 @@
 package com.mttnow.adapters;
 
-import com.mttnow.Availability.Flight.Fares.Fare;
+import com.mttnow.client.model.Availability.Flight.Fares.Fare;
 import com.mttnow.controller.model.response.FarePricesResponse;
 import com.mttnow.controller.model.response.PriceResponse;
 import com.mttnow.enums.FareClassEnum;

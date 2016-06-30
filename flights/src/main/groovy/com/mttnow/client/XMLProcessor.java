@@ -1,4 +1,6 @@
-package com.mttnow;
+package com.mttnow.client;
+
+import com.mttnow.client.model.Availability;
 
 import java.io.StringReader;
 
