@@ -43,7 +43,6 @@ GET http://localhost:8096/rest/flights/availability/DUB/DEL/20151007/20151020/2
 - I am new to Groovy and Camel (I have used it in the past for specific things like triggering EDI file integration for banks), but decided to ensure I made my project able to use these technologies. Putting it all together and making it work took me some time, that is why I tried stick with a simple solution, but it worked well!
 
 - My understanding is that the problem received is a lot more related to converting a MediaType from XML to JSON, rather than requiring more complex implementations where we would need to call multiple webservices, aggregate their values, apply business rules, etc.
-
 Therefore, I choose to keep it simple and work mostly with Camel (even to provide the REST Endpoint that returns JSON) to make this integration, rather than using the full Spring MVC with Controller and Service Classes as we usually work with.  Besides this lack of business complexity, I noticed from the interviews and job descriptions how Camel is used a lot for MTT integrations and decided to give a focus on it.
 
 - Once again, since there are not a lot more than converting the response of the airline webservice, the one and main Design Pattern here is Adapters. There was no need to have a lot of code to actually consume the airline webservice. The is also not a lot of code to provide the REST endpoint converted to Json, I let Camel do the trick. Most of the code is to actually convert the Data and guarantee the integrity of the information.
