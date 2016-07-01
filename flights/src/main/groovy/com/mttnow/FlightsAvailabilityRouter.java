@@ -19,7 +19,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 @org.springframework.stereotype.Component
-public class AirlineCamelRouter extends RouteBuilder {
+public class FlightsAvailabilityRouter extends RouteBuilder {
 
   public static final String API_MAPPING = "/rest/*";
   public static final String FLIGHT_AVAILABILITY_ENDPOINT = "/flights/availability";

@@ -15,7 +15,7 @@ import javax.xml.datatype.XMLGregorianCalendar;
 
 @SpringBootApplication
 @RunWith(SpringJUnit4ClassRunner.class)
-@SpringApplicationConfiguration(classes = AirlinesApplication.class)
+@SpringApplicationConfiguration(classes = FlightsAvailabilityApplication.class)
 @WebAppConfiguration
 @ActiveProfiles("test")
 public abstract class AirlinesApplicationTests {
