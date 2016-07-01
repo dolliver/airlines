@@ -15,7 +15,7 @@ The goal is to allow create a REST endpoint where applications can consume infor
 - Gson 3.3.1
 - Groovy 2.3.7
 
-The build is made with Gradle using Groovy plugin. Although sources files are in Java, this structure allow future evolution and use of Groovy files, even mixed with Java.
+The build is made with Gradle using Groovy plugin. Although sources files are in Java, this structure allows future evolution and use of Groovy files, even mixed with Java.
 
 ### How to test
 - Build project
@@ -28,10 +28,9 @@ gradle clean build
 gradle bootRun
 ```
 
-The default start port is 8080 (this can be changed on application.properties file with a server.port  key)
+The default start port is 8080 (this can be changed in the application.properties file)
 
-- After starting the application, consume with a REST Client the flight availability endpoint (or simply paste the URL on the browser)
-
+- After starting the application, consume the created endpoint with a REST Client, or simply paste the URL in a browser, since it uses a GET method.
 ```
 GET http://localhost:8096/rest/flights/availability/DUB/DEL/20151007/20151020/2
 ```
@@ -39,11 +38,13 @@ GET http://localhost:8096/rest/flights/availability/DUB/DEL/20151007/20151020/2
 
 ### Considerations
 
-- I chose to use Java 7 because that is the current environment I work on and I have my workspace already setup for that. That saved me time and allowed me to focus on the task.
+- I chose to use Java 7 because that is the current environment I work on and I have my workspace already setup for that. That saved me time and allowed me to focus more on the task given.
 
-- I am new to Groovy and Camel (have used it in the past for specific things like triggering EDI file integration for banks), but decided to ensure I made my project able to use these technologies. Putting it all together and making it work took me some time, that is why I tried stick with simple, but it worked well!
+- I am new to Groovy and Camel (I have used it in the past for specific things like triggering EDI file integration for banks), but decided to ensure I made my project able to use these technologies. Putting it all together and making it work took me some time, that is why I tried stick with a simple solution, but it worked well!
 
-- My understanding is that the problem received is a lot more related to converting a MediaType from XML to JSON than requiring more complex implementations where we would need to call multiple webservices, aggregate their values, apply business rules, etc. Therefore, I choose to keep it simple and work mostly with Camel (even to provide the REST Endpoint that returns JSON) to make this integration, rather than using the full Spring MVC with Controller and Service Classes as we usually work with.  Besides this lack of business complexity, I noticed from the interviews and job descriptions how Camel is used a lot for MTT integrations and decided to give a focus on it.
+- My understanding is that the problem received is a lot more related to converting a MediaType from XML to JSON, rather than requiring more complex implementations where we would need to call multiple webservices, aggregate their values, apply business rules, etc.
+
+Therefore, I choose to keep it simple and work mostly with Camel (even to provide the REST Endpoint that returns JSON) to make this integration, rather than using the full Spring MVC with Controller and Service Classes as we usually work with.  Besides this lack of business complexity, I noticed from the interviews and job descriptions how Camel is used a lot for MTT integrations and decided to give a focus on it.
 
 - Once again, since there are not a lot more than converting the response of the airline webservice, the one and main Design Pattern here is Adapters. There was no need to have a lot of code to actually consume the airline webservice. The is also not a lot of code to provide the REST endpoint converted to Json, I let Camel do the trick. Most of the code is to actually convert the Data and guarantee the integrity of the information.
 
