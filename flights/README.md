@@ -32,7 +32,7 @@ The default start port is 8080 (this can be changed in the application.propertie
 
 - After starting the application, consume the created endpoint with a REST Client, or simply paste the URL in a browser, since it uses a GET method.
 ```
-GET http://localhost:8096/rest/flights/availability/DUB/DEL/20151007/20151020/2
+GET http://localhost:8080/rest/flights/availability/DUB/DEL/20151007/20151020/2
 ```
 
 
