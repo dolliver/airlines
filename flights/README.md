@@ -2,7 +2,8 @@
 
 ### About
 
-This project was created as part of MTT evaluation for a Senior Server Developer, and the solution created by Douglas Oliveira..
+This project was created as part of MTT technical evaluation. This solution was created by Douglas Oliveira.
+
 The goal is to allow create a REST endpoint where applications can consume information about flights availability, searching by Airport Origin, Airport Destination, Departure Date, Return Date and number of passengers. This webservice should consume an airline webservice to obtain such information.
 
 ### Components Used
@@ -14,7 +15,7 @@ The goal is to allow create a REST endpoint where applications can consume infor
 - Gson 3.3.1
 - Groovy 2.3.7
 
-The build is made with Gradle using Groovy plugin (although sources files are Java), in order to allow future evolution and use of Groovy files.
+The build is made with Gradle using Groovy plugin. Although sources files are in Java, this structure allow future evolution and use of Groovy files, even mixed with Java.
 
 ### How to test
 - Build project
@@ -38,7 +39,7 @@ GET http://localhost:8096/rest/flights/availability/DUB/DEL/20151007/20151020/2
 
 ### Considerations
 
-- I chose to use Java 7 because thats the current environment I work on and I have my workspace already setup for that. That saved me time and allowed me to focus on the task.
+- I chose to use Java 7 because that is the current environment I work on and I have my workspace already setup for that. That saved me time and allowed me to focus on the task.
 
 - I am new to Groovy and Camel (have used it in the past for specific things like triggering EDI file integration for banks), but decided to ensure I made my project able to use these technologies. Putting it all together and making it work took me some time, that is why I tried stick with simple, but it worked well!
 
